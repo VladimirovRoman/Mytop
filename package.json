@@ -7,8 +7,7 @@
 		"debug": "NODE_OPTIONS='--inspect' next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"stylelint": "stylelint \"**/*.css\" --fix"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"classnames": "^2.3.2",

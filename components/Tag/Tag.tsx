@@ -1,6 +1,7 @@
-import { TagProps } from './Tag.props';
-import styles from './Tag.module.css';
 import cn from 'classnames';
+
+import styles from './Tag.module.css';
+import { TagProps } from './Tag.props';
 
 export const Tag = ({
 	size = 'm',

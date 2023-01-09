@@ -1,6 +1,7 @@
+import { ReactNode } from 'react';
+
 import { HtagProps } from './Htag.props';
 import styles from './Htag.module.css';
-import { ReactNode } from 'react';
 
 export const Htag = ({ tag, children }: HtagProps): JSX.Element => {
 	const getHeading = (children: ReactNode) => ({
