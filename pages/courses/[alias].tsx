@@ -1,16 +1,16 @@
-productsimport { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { ParsedUrlQuery } from 'querystring';
 import axios from 'axios';
 
 import { withLayout } from '../../layout/Layout';
 import { MenuItem } from '../../interfaces/menu.interface';
 import { PageModel } from '../../interfaces/page.interface';
-import { ParsedUrlQuery } from 'querystring';
 import { ProductModel } from '../../interfaces/product.interface';
 
 const firstCategory = 0;
 
 function Course({ menu, page, products }: CourseProps): JSX.Element {
-	return <main>{ products && products.length}</main>;
+	return <main>{products && products.length}</main>;
 }
 export default withLayout(Course);
 
@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		}
 	);
 	return {
-		paths: menu.flatMap((m) => m.pages.map((p) => '/courses/' + p.alias)),
+		paths: menu.flatMap((menu) => menu.pages.map((page) => '/courses/' + page.alias)),
 		fallback: true,
 	};
 };
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
 	);
 
 	const { data: products } = await axios.post<ProductModel[]>(
-		process.env.NEXT_PUBLIC_DOMAIN + '/api/product/find/',
+		process.env.NEXT_PUBLIC_DOMAIN + '/api/product/find',
 		{
 			category: page.category,
 			limit: 10,
