@@ -1,14 +1,14 @@
 :root {
 	--font-family: 'Noto Sans', sans-serif;
 	--black: #3b434e;
-	--gray-light: #EBEBEB; 
+	--gray-light: #ebebeb;
+	--gray-dark: #787d85;
 	--white: #ffffff;
 	--primary: #7653fc;
 	--primary-hover: #6344df;
 	--red: #de0000;
 	--green: #1dc37e;
 	--green-light: #c8f8e4;
-
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 	color: var(--black);
 	background: #f5f6f8;
 }
-
+	
 * {
 	box-sizing: border-box;
 }
