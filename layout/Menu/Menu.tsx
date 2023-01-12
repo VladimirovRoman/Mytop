@@ -27,7 +27,7 @@ export const Menu = (): JSX.Element => {
 
 	const buildFirstLevel = () => {
 		return (
-			<>
+			<div>
 				{firstLevelMenu.map((m) => (
 					<div key={m.route}>
 						<Link href={`/${m.route}`} legacyBehavior>
@@ -42,11 +42,10 @@ export const Menu = (): JSX.Element => {
 								</div>
 							</a>
 						</Link>
-
 						{m.id == firstCategory && buildSecondLevel(m)}
 					</div>
 				))}
-			</>
+			</div>
 		);
 	};
 
@@ -81,7 +80,7 @@ export const Menu = (): JSX.Element => {
 
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return pages.map((p) => (
-			<Link href={`/${route}/${p.alias}`} legacyBehavior>
+			<Link key={p._id} href={`/${route}/${p.alias}`} legacyBehavior>
 				<a
 					className={cn(styles.thirdLevel, {
 						[styles.thirdLevelActive]: `/${route}/${p.alias}` == router.asPath,

@@ -8,10 +8,9 @@ import { MenuItem } from '../interfaces/menu.interface';
 
 function Home({ menu }: HomeProps): JSX.Element {
 	const [rating, setRating] = useState<number>(4);
-
 	return (
 		<>
-			<Htag tag='h1'> Заголовок </Htag>
+			<Htag tag='h1'> Header </Htag>
 			<Button appearance='primary' arrow='right'>
 				Кнопка
 			</Button>
@@ -19,16 +18,26 @@ function Home({ menu }: HomeProps): JSX.Element {
 				Кнопка
 			</Button>
 			<Paragraph size='p14'>Маленький</Paragraph>
+			<Paragraph size='p16'>Средний</Paragraph>
+			<Paragraph size='p18'>Большой</Paragraph>
 			<Tag size='s'>ghost</Tag>
+			<Tag size='m' color='red'>
+				red
+			</Tag>
+			<Tag size='s' color='green'>
+				green
+			</Tag>
+			<Tag color='primary'>lol</Tag>
+			<Rating rating={4} isEditable />
 			<Rating rating={rating} isEditable setRating={setRating} />
 		</>
 	);
 }
+
 export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const firstCategory = 0;
-	
 	const { data: menu } = await axios.post<MenuItem[]>(
 		process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
 		{

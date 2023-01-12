@@ -4,10 +4,9 @@ import axios from 'axios';
 
 import { withLayout } from '../../layout/Layout';
 import { MenuItem } from '../../interfaces/menu.interface';
-import { PageModel } from '../../interfaces/page.interface';
+import { PageModel, TopLevelCategory } from '../../interfaces/page.interface';
 import { ProductModel } from '../../interfaces/product.interface';
-
-const firstCategory = 0;
+import { firstLevelMenu } from '../../helpers/helper';
 
 function Course({ menu, page, products }: CourseProps): JSX.Element {
 	return <main>{products && products.length}</main>;
@@ -15,14 +14,18 @@ function Course({ menu, page, products }: CourseProps): JSX.Element {
 export default withLayout(Course);
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const { data: menu } = await axios.post<MenuItem[]>(
-		process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
-		{
-			firstCategory,
-		}
-	);
+	let paths: string[] = [];
+	for (const m of firstLevelMenu) {
+		const { data: menu } = await axios.post<MenuItem[]>(
+			process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
+			{
+				firstCategory: m.id,
+			}
+		);
+		paths = paths.concat(menu.flatMap((s) => s.pages.map((p) => `/${m.route}/${p.alias}`)));
+	}
 	return {
-		paths: menu.flatMap((menu) => menu.pages.map((page) => '/courses/' + page.alias)),
+		paths,
 		fallback: true,
 	};
 };
@@ -35,11 +38,17 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
 			notFound: true,
 		};
 	}
+	const firstCategoryItem = firstLevelMenu.find((m) => m.route == params.type);
+	if (!firstCategoryItem) {
+		return {
+			notFound: true,
+		};
+	}
 
 	const { data: menu } = await axios.post<MenuItem[]>(
 		process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
 		{
-			firstCategory,
+			firstCategory: firstCategoryItem.id,
 		}
 	);
 
@@ -58,7 +67,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
 	return {
 		props: {
 			menu,
-			firstCategory,
+			firstCategory: firstCategoryItem.id,
 			page,
 			products,
 		},
@@ -67,7 +76,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
 
 interface CourseProps extends Record<string, unknown> {
 	menu: MenuItem[];
-	firstCategory: number;
+	firstCategory: TopLevelCategory;
 	page: PageModel;
 	products: ProductModel[];
 }
