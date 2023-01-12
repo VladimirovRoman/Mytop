@@ -9,7 +9,7 @@
 .s {
 	padding: 5px 10px;
 
-	font-size: 12px; 
+	font-size: 12px;
 	line-height: 12px;
 }
 .m {
@@ -30,7 +30,7 @@
 	font-weight: bold;
 }
 
-.grey {
+.gray {
 	color: var(--white);
 	background: #b3c0d9;
 
@@ -46,6 +46,6 @@
 .primary {
 	color: var(--primary);
 	background: none;
-	
+
 	border: 1px solid var(--primary);
 }
