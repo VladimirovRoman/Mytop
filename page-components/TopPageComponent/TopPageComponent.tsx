@@ -1,6 +1,6 @@
 import { TopPageComponentProps } from './TopPageComponent.props';
 
-import { HhData, Htag, Tag, Text } from '../../components';
+import { HhData, Htag, Tag } from '../../components';
 import styles from './TopPageComponent.module.css';
 import { TopLevelCategory } from '../../interfaces/page.interface';
 
@@ -8,7 +8,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.title}>
-				<Htag tag='h1'>{page.title}</Htag>
+				<Htag tag='h1'>{page?.title}</Htag>
 				{products && (
 					<Tag color='gray' size='m'>
 						{products.length}
@@ -18,7 +18,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 			</div>
 			<div>{products && products.map((p) => <div key={p._id}>{p?.title}</div>)}</div>
 			<div className={styles.hhTitle}>
-				<Htag tag='h2'>Вакансии - {page.category}</Htag>
+				<Htag tag='h2'>Вакансии - {page?.category}</Htag>
 				<Tag color='red' size='m'>
 					hh.ru
 				</Tag>
