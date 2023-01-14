@@ -10,6 +10,10 @@
 	grid-row: 1 / span 2;
 }
 
+.category {
+	margin-top: 7px;
+}
+
 .title,
 .tags {
 	grid-column: titleStart / middle;
@@ -66,6 +70,12 @@
 	align-self: flex-end;
 }
 
+.description {
+	font-size: 16px;
+	margin-bottom: 15px;
+	line-height: 24px;
+}
+
 .priceTitle,
 .creditTitle,
 .rateTitle {
@@ -81,4 +91,29 @@
 
 .oldPrice {
 	margin-left: 5px;
+}
+
+.reviewButton {
+	margin-left: 20px;
+}
+
+.advBlock {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.advTitle {
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.advantages {
+	margin-bottom: 20px;
+	padding-left: 15px;
+	border-left: 2px solid var(--green);
+}
+
+.disadvantages {
+	padding-left: 15px;
+	border-left: 2px solid var(--red);
 }

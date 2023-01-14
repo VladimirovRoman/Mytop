@@ -3,5 +3,7 @@
 	height: 1px;
 
 	border: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	background: var(--gray-light);
 }

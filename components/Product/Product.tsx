@@ -4,7 +4,7 @@ import { Card } from '../Card/Card';
 import { Rating } from '../Rating/Rating';
 import { Tag } from '../Tag/Tag';
 import { Button } from '../Button/Button';
-import { priceRu } from '../../helpers/helper';
+import { declOfNum, priceRu } from '../../helpers/helper';
 import { Divider } from '../Divider/Divider';
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
@@ -30,31 +30,37 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			</div>
 			<div className={styles.tags}>
 				{product.categories.map((category) => (
-					<Tag color='ghost' key={category}>
+					<Tag className={styles.category} color='ghost' key={category}>
 						{category}
 					</Tag>
 				))}
 			</div>
 			<div className={styles.priceTitle}>цена</div>
 			<div className={styles.creditTitle}>кредит</div>
-			<div className={styles.rateTitle}>{product.reviewCount}отзывов</div>
+			<div className={styles.rateTitle}>
+				{product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}
+			</div>
 			<Divider className={styles.hr} />
 			<div className={styles.description}>{product.description}</div>
 			<div className={styles.feature}>фичи</div>
 			<div className={styles.advBlock}>
-				<div className={styles.advantages}>
-					<div>Преимущества</div>
-					<div>{product.advantages}</div>
-				</div>
-				<div className={styles.disadvantages}>
-					<div>Недостатки</div>
-					<div>{product.disadvantages}</div>
-				</div>
+				{product.advantages && (
+					<div className={styles.advantages}>
+						<div className={styles.advTitle}>Преимущества</div>
+						<div>{product.advantages}</div>
+					</div>
+				)}
+				{product.disadvantages && (
+					<div className={styles.disadvantages}>
+						<div className={styles.advTitle}>Недостатки</div>
+						<div>{product.disadvantages}</div>
+					</div>
+				)}
 			</div>
 			<Divider className={styles.hr} />
 			<div className={styles.actions}>
 				<Button appearance='primary'>Узнать подробнее</Button>
-				<Button appearance='ghost' arrow={'right'}>
+				<Button className={styles.reviewButton} appearance='ghost' arrow={'right'}>
 					Читать отзывы
 				</Button>
 			</div>
