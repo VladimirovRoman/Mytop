@@ -13,10 +13,11 @@
 }
 
 .sort {
+	cursor: pointer;
 	display: inline-block;
 	display: grid;
 	align-items: center;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: auto auto;
 	gap: 40px;
 }
 
