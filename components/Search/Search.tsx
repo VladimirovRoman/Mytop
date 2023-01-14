@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { KeyboardEventHandler, useState } from 'react';
 import cn from 'classnames';
 
 import { SearchProps } from './Search.props';
@@ -23,9 +23,9 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 		});
 	};
 
-	const handleKeyDown = (event: KeyboardEvent) => {
+	const handleKeyDown = (event: React.KeyboardEvent) => {
 		if (event.key == 'Enter') {
-			goToSearch();
+			return goToSearch();
 		}
 	};
 
@@ -38,6 +38,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 				onChange={(e) => setSearch(e.target.value)}
 				onKeyDown={handleKeyDown}
 			/>
+
 			<Button appearance={'primary'} className={styles.button} onClick={goToSearch}>
 				<SearchIcon />
 			</Button>
