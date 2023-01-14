@@ -1,0 +1,84 @@
+.product {
+	display: grid;
+	grid-template-columns: [start] 70px [logoEnd] 30px [titleStart] calc(50% - 100px) [middle] 1fr [priceStart] auto [priceEnd] 40px [creditStart] auto [creditEnd] 40px [rateStart] auto [end];
+	padding: 30px;
+	margin-bottom: 30px;
+}
+
+.logo {
+	grid-column: start / logoEnd;
+	grid-row: 1 / span 2;
+}
+
+.title,
+.tags {
+	grid-column: titleStart / middle;
+}
+
+.price,
+.priceTitle {
+	grid-column: priceStart / priceEnd;
+}
+
+.credit,
+.creditTitle {
+	grid-column: creditStart / creditEnd;
+}
+
+.rating,
+.rateTitle {
+	grid-column: rateStart / end;
+}
+
+.hr,
+.description,
+.actions {
+	grid-column: start / end;
+}
+
+.feature {
+	grid-column: start / middle;
+}
+
+.advBlock {
+	grid-column: middle / end;
+}
+
+.logo img {
+	border-radius: 5px;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 27px;
+	align-self: flex-end;
+}
+
+.price,
+.credit {
+	font-size: 20px;
+	line-height: 27px;
+	align-self: flex-end;
+}
+
+.rating {
+	align-self: flex-end;
+}
+
+.priceTitle,
+.creditTitle,
+.rateTitle {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.month {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+.oldPrice {
+	margin-left: 5px;
+}

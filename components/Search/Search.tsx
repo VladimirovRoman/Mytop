@@ -1,4 +1,4 @@
-import { KeyboardEventHandler, useState } from 'react';
+import { useState } from 'react';
 import cn from 'classnames';
 
 import { SearchProps } from './Search.props';
@@ -25,7 +25,8 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
 
 	const handleKeyDown = (event: React.KeyboardEvent) => {
 		if (event.key == 'Enter') {
-			return goToSearch();
+			goToSearch();
+			setSearch('');
 		}
 	};
 
