@@ -42,7 +42,15 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			</div>
 			<Divider className={styles.hr} />
 			<div className={styles.description}>{product.description}</div>
-			<div className={styles.feature}>фичи</div>
+			<div className={styles.feature}>
+				{product.characteristics.map((characteristic) => (
+					<div className={styles.characteristics} key={characteristic.name}>
+						<span className={styles.characteristicsName}>{characteristic.name}</span>
+						<span className={styles.characteristicsDots}></span>
+						<span className={styles.characteristicsValue}>{characteristic.value}</span>
+					</div>
+				))}
+			</div>
 			<div className={styles.advBlock}>
 				{product.advantages && (
 					<div className={styles.advantages}>

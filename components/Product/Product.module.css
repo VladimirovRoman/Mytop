@@ -117,3 +117,23 @@
 	padding-left: 15px;
 	border-left: 2px solid var(--red);
 }
+
+.characteristics {
+	display: grid;
+	padding-right: 60px;
+	font-size: 16px;
+	align-items: baseline;
+	gap: 10px;
+
+	line-height: 32px;
+	grid-template-columns: auto 1fr auto;
+}
+
+.characteristicsName {
+	font-weight: 700;
+}
+
+.characteristicsDots {
+	border-bottom: 1px dashed var(--gray-light);
+	margin-bottom: 5px;
+}
