@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import cn from 'classnames';
 
 import { ProductProps } from './Product.props';
 import { Card } from '../Card/Card';
@@ -14,8 +15,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 	return (
 		<Card className={styles.product}>
 			<div className={styles.logo}>
-				<Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} 
-				/>
+				<Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} width={70} height={70} />
 				<img />
 			</div>
 			<div className={styles.title}>{product.title}</div>
@@ -70,7 +70,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 					</div>
 				)}
 			</div>
-			<Divider className={styles.hr} />
+			<Divider className={cn(styles.hr, styles.h2)} />
 			<div className={styles.actions}>
 				<Button appearance='primary'>Узнать подробнее</Button>
 				<Button className={styles.reviewButton} appearance='ghost' arrow={'right'}>
