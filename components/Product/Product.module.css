@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: [start] 70px [logoEnd] 30px [titleStart] calc(50% - 100px) [middle] 1fr [priceStart] auto [priceEnd] 40px [creditStart] auto [creditEnd] 40px [rateStart] auto [end];
 	padding: 30px;
-	margin-bottom: 30px;
+	margin-top: 30px;
 }
 
 .logo {
@@ -137,6 +137,18 @@
 .characteristicsDots {
 	border-bottom: 1px dashed var(--gray-light);
 	margin-bottom: 5px;
+}
+
+.closed {
+	overflow: hidden;
+	max-width: 0;
+	padding: 0;
+}
+
+.opened {
+	overflow: hidden;
+	max-width: auto;
+	padding: 30px;
 }
 
 @media screen and (max-width: 1320px) {
