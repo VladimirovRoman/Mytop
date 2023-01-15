@@ -2,14 +2,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import cn from 'classnames';
 
-import { ProductProps } from './Product.props';
-import { Card } from '../Card/Card';
-import { Rating } from '../Rating/Rating';
-import { Tag } from '../Tag/Tag';
-import { Button } from '../Button/Button';
-import { declinationOfWords, priceRu } from '../../helpers/helper';
-import { Divider } from '../Divider/Divider';
+import { Review, Card, Rating, Tag, Button, Divider } from '../index';
 
+import { declinationOfWords, priceRu } from '../../helpers/helper';
+import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
@@ -27,6 +23,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 		advantages,
 		disadvantages,
 		characteristics,
+		reviews,
 	} = product;
 
 	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
@@ -110,7 +107,9 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 					[styles.closed]: !isReviewOpened,
 				})}
 			>
-				asdasdsadas
+				{reviews.map((review) => (
+					<Review key={review._id} review={review}></Review>
+				))}
 			</Card>
 		</>
 	);
