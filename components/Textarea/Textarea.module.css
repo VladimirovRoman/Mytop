@@ -18,12 +18,12 @@
 	color: var(--gray);
 }
 
-.error {
-	border: 1px solid var(--red);
-}
-
 .textareaWrapper {
 	position: relative;
+}
+
+.error {
+	border: 1px solid var(--red);
 }
 
 .errorMessage {

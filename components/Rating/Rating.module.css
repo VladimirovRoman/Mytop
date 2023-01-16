@@ -6,6 +6,22 @@
 	margin-right: 5px;
 	transition: all 0.3s;
 }
+
 .editable {
 	cursor: pointer;
+}
+
+.ratingWrapper {
+	position: relative;
+}
+
+.errorMessage {
+	position: absolute;
+	bottom: -20px;
+	color: var(--red);
+	left: 0px;
+}
+
+.error svg {
+	stroke: var(--red);
 }
