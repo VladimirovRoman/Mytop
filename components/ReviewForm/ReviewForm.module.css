@@ -4,10 +4,63 @@
 	display: grid;
 
 	grid-template-columns: [start] auto 1fr auto [end];
-	justify-items: left;
 	gap: 20px 30px;
+	align-items: center;
 }
 
-.description { 
+.description,
+.submit {
 	grid-column: start / end;
+}
+
+.title {
+	justify-self: left;
+}
+
+.info {
+	margin-left: 15px;
+}
+
+.rating {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+}
+
+.success {
+	background: var(--green-light);
+	padding: 20px;
+	position: relative;
+	border-radius: 5px;
+
+	margin-top: 20px;
+}
+
+.successTitle {
+	font-weight: bold;
+}
+
+.close {
+	position: absolute;
+	cursor: pointer;
+	top: 10px;
+	right: 10px;
+}
+
+@media screen and (max-width: 1100px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
+	.title {
+		justify-self: normal;
+	}
+	.rating {
+		grid-template-columns: start / end;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
 }
