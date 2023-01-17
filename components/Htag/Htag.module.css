@@ -1,22 +1,21 @@
 .h1 {
-	font-weight: 500;
-	font-size: 26px;
-	line-height: 35px;
-	margin: 0;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 35px;
+  margin: 0;
 }
-
 .h2 {
-	font-weight: 500;
-	font-size: 22px;
-	line-height: 30px;
-	margin-top: 0;
-	margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 30px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.h3 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 27px;
+  margin: 0;
 }
 
-.h3 {
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 27px;
-	margin: 0;
-}
 

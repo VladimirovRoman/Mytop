@@ -1,21 +1,21 @@
 .p {
-	margin: 0;
+  margin: 0;
 }
 
 .p14 {
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 24px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 24px;
 }
 
 .p16 {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 24px;
 }
 
 .p18 {
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 29px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 29px;
 }

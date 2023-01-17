@@ -1,43 +1,41 @@
 .review {
-	display: grid;
-	grid-template-columns: [start] auto 1fr auto auto [end];
-
-	align-items: center;
-	gap: 10px;
-	line-height: 24px;
-	font-size: 14px;
+  display: grid;
+  grid-template-columns: [start] auto 1fr auto auto [end];
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4rem;
 }
 
 .description {
-	grid-column: start / end;
+  grid-column: start / end;
 }
 
 .date {
-	margin-right: 10px;
+  margin-right: 10px;
 }
 
 .name {
-	font-weight: bold;
-	margin-right: 5px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 640px) {
-	.review {
-		grid-template-columns: [start] 30px [titleStart] auto [dateEnd] 1fr [end];
-	}
-	.title {
-		grid-column: titleStart / end;
-	}
-	.date {
-		grid-column: start / dateEnd;
-	}
+  .review {
+    grid-template-columns: [start] 30px [titleStart] auto [dateEnd] 1fr [end];
+  }
+  .title {
+    grid-column: titleStart / end;
+  }
+  .date {
+    grid-column: start / dateEnd;
+  }
 }
 
-@media screen and (max-width: 320px) {
-	.date {
-		grid-column: start / end;
-	}
-	.rating {
-		grid-column: start / end;
-	}
+@media screen and (max-width: 480px) {
+  .date {
+    grid-column: start / end;
+  }
+   .rating {
+    grid-column: start / end;
+  }
 }

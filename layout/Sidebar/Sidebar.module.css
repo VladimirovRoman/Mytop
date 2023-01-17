@@ -1,5 +1,8 @@
 .sidebar {
-	display: grid;
-	align-content: start;
-	gap: 20px;
+  display: grid;
+  align-content: start;
+  grid-template-rows: auto auto 1fr;
+  gap: 20px;
+  cursor: pointer;
 }
+
