@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 
 import { sortReducer } from './sort.reducer';
 import { SortEnum } from '../../components/Sort/Sort.props';
@@ -15,6 +15,10 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 		sort: SortEnum.Rating,
 	});
 
+	useEffect(() => {
+		dispatchSort({ type: 'reset', initialState: products });
+	}, [products]);
+
 	const setSort = (sort: SortEnum) => {
 		dispatchSort({ type: sort });
 	};
@@ -30,7 +34,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 				)}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
-			<div>{sortedProducts && sortedProducts.map((p) => <Product product={p} key={p._id} />)}</div>
+			<div>{sortedProducts?.map((p) => <Product layout product={p} key={p._id} />)}</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page?.category}</Htag>
 				<Tag color='red' size='m'>
