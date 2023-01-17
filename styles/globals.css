@@ -1,18 +1,19 @@
 :root {
 	--font-family: 'Noto Sans', sans-serif;
 	--black: #3b434e;
+	--gray: #A4A4A4;
 	--gray: #a4a4a4;
 	--gray-light: #ebebeb;
 	--gray-dark: #787d85;
 	--white: #ffffff;
 	--primary: #7653fc;
 	--primary-hover: #6344df;
+	--red: #FC836D;
 	--red: #fc836d;
 	--red-light: #fea291;
 	--green: #1dc37e;
 	--green-light: #c8f8e4;
 }
-
 body {
 	font-family: 'Noto Sans', sans-serif;
 	margin: 0;
@@ -20,11 +21,11 @@ body {
 	color: var(--black);
 	background: #f5f6f8;
 }
+	
 
 * {
 	box-sizing: border-box;
 }
-
 a {
 	color: inherit;
 	text-decoration: none;

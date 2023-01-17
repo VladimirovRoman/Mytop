@@ -49,23 +49,6 @@
   padding: 0;
 }
 
-.secondLevelBlock {
-  display: none;
-}
-
-.secondLevelBlockOpened:last-child {
-  display: block;
-  /* overflow: hidden;
-  list-style: none;
-  padding: 0; */
-}
-
-.secondLevelBlockOpened:last-child {
-  margin-bottom: 20px;
-  /* overflow: hidden;
-  list-style: none;
-  padding: 0; */
-}
 
 .thirdLevel {
   margin-bottom: 10px;

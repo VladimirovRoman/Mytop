@@ -1,4 +1,3 @@
-import { HhData } from "../../interfaces/page.interface";
+import { HeadHunterData } from "../../interfaces/page.interface";
 
-
-export interface HhDataProps extends HhData {}
+export interface HhDataProps extends HeadHunterData {}
