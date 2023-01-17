@@ -44,10 +44,7 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div
-				className={cn(styles.reviewForm, className)}
-				{...props}
-			>
+			<div className={cn(styles.reviewForm, className)} {...props}>
 				<Input
 					{...register('name', { required: { value: true, message: 'Заполните имя' } })}
 					placeholder='имя'
@@ -91,19 +88,13 @@ export const ReviewForm = ({ productId, className, ...props }: ReviewFormProps):
 				<div className={cn(styles.success, styles.panel)}>
 					<div className={styles.successTitle}>Ваш отзыв отправлен</div>
 					<div>Спасибо, ваш отзыв будет опубликован после проверки</div>
-					<CloseIcon
-						className={styles.close}
-						onClick={() => setIsSuccess(false)}
-					/>
+					<CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
 				</div>
 			)}
 			{isError && (
 				<div className={cn(styles.error, styles.panel)}>
 					Что-то пошло не так, попробуйте обновить страницу
-					<CloseIcon
-						className={styles.close}
-						onClick={() => setIsError(undefined)}
-					/>
+					<CloseIcon className={styles.close} onClick={() => setIsError(undefined)} />
 				</div>
 			)}
 		</form>
