@@ -7,7 +7,11 @@ import { TopLevelCategory } from '../../interfaces/page.interface';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { sortReducer } from './sort.reducer';
 
-export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
+export const TopPageComponent = ({
+	page,
+	products,
+	firstCategory,
+}: TopPageComponentProps): JSX.Element => {
 	const [{ products: sortedProducts, sort }, dispathSort] = useReducer(sortReducer, {
 		products,
 		sort: SortEnum.Rating,
@@ -32,7 +36,10 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 				)}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
-			<div>{sortedProducts && sortedProducts.map((p) => <Product layout key={p.title} product={p} />)}</div>
+			<div role='list'>
+				{sortedProducts &&
+					sortedProducts.map((p) => <Product role='listitem' layout key={p.title} product={p} />)}
+			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page?.category}</Htag>
 				<Tag color='red' size='m'>
@@ -48,7 +55,9 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
 					<Benefits advantages={page?.advantages} />
 				</>
 			)}
-			{page?.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page?.seoText }} />}
+			{page?.seoText && (
+				<div className={styles.seo} dangerouslySetInnerHTML={{ __html: page?.seoText }} />
+			)}
 			<Htag tag='h2'>Получаемые навыки</Htag>
 			{page?.tags.map((tag) => (
 				<Tag key={tag} color='primary'>
