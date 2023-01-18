@@ -1,6 +1,11 @@
 .filled svg {
 	fill: var(--primary);
 }
+
+.star  {
+	display: inline-block;
+}
+
 .star svg {
 	margin-right: 5px;
 	transition: all 0.3s;
