@@ -1,4 +1,3 @@
-import { KeyboardEvent } from 'react';
 import cn from 'classnames';
 
 import { SortEnum, SortProps } from './Sort.props';
