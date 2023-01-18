@@ -12,7 +12,12 @@ import { IReviewForm, IReviewSentResponse } from './ReviewForm.interface';
 import CloseIcon from './close.svg';
 import styles from './ReviewForm.module.css';
 
-export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewFormProps): JSX.Element => {
+export const ReviewForm = ({
+	productId,
+	isOpened,
+	className,
+	...props
+}: ReviewFormProps): JSX.Element => {
 	const {
 		register,
 		control,
@@ -27,7 +32,10 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 
 	const onSubmit = async (formData: IReviewForm) => {
 		try {
-			const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, { ...formData, productId });
+			const { data } = await axios.post<IReviewSentResponse>(API.review.createDemo, {
+				...formData,
+				productId,
+			});
 			if (data.message) {
 				setIsSuccess(true);
 				reset();
@@ -88,20 +96,34 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 					<Button tabIndex={isOpened ? 0 : -1} appearance='primary' onClick={() => clearErrors()}>
 						Отправить
 					</Button>
-					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
+					<span className={styles.info}>
+						* Перед публикацией отзыв пройдет предварительную модерацию и проверку
+					</span>
 				</div>
 			</div>
 			{isSuccess && (
-				<div className={cn(styles.success, styles.panel)}>
+				<div className={cn(styles.success, styles.panel)} role='alert'>
 					<div className={styles.successTitle}>Ваш отзыв отправлен</div>
 					<div> Спасибо, ваш отзыв будет опубликован после проверки.</div>
-					<CloseIcon className={styles.close} onClick={() => setIsSuccess(false)} />
+					<button
+						area-label='закрыть оповещение'
+						onClick={() => setIsSuccess(false)}
+						className={styles.close}
+					>
+						<CloseIcon />
+					</button>
 				</div>
 			)}
 			{isError && (
-				<div className={cn(styles.error, styles.panel)}>
+				<div className={cn(styles.error, styles.panel)} role='alert'>
 					Что-то пошло не так, попробуйте обновить страницу
-					<CloseIcon className={styles.close} onClick={() => setError(undefined)} />
+					<button
+						area-label='закрыть оповещение'
+						onClick={() => setError(undefined)}
+						className={styles.close}
+					>
+						<CloseIcon />
+					</button>
 				</div>
 			)}
 		</form>

@@ -1,79 +1,78 @@
 .reviewForm {
-  font-size: 0.9rem;
-  line-height: 1.5rem;
-  display: grid;
+	font-size: 0.9rem;
+	line-height: 1.5rem;
+	display: grid;
 
-  grid-template-columns: [start] auto 1fr auto [end];
-  gap: 20px 30px;
-  align-items: center;
+	grid-template-columns: [start] auto 1fr auto [end];
+	gap: 20px 30px;
+	align-items: center;
 }
 
 .description,
 .submit {
-  grid-column: start / end;
+	grid-column: start / end;
 }
 
 .title {
-  justify-self: left;
+	justify-self: left;
 }
 
 .info {
-  margin-left: 15px;
+	margin-left: 15px;
 }
 
 .rating {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
 }
 
 .panel {
-  padding: 20px;
-  position: relative;
-  border-radius: 5px;
+	padding: 20px;
+	position: relative;
+	border-radius: 5px;
 
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .success {
-  background: var(--green-light);
+	background: var(--green-light);
 }
 
 .error {
-  background: var(--red-light);
+	background: var(--red-light);
 }
 
 .successTitle {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .close {
-  position: absolute;
-  cursor: pointer;
-  top: 10px;
-  right: 10px;
+	position: absolute;
+	top: 10px;
+	right: 10px; 
+	border: none;
+	background: none;
 }
 
 .error .close path {
-  stroke: var(--red);
+	stroke: var(--red);
 }
 
-
-
 @media screen and (max-width: 1100px) {
-  .reviewForm {
-    grid-template-columns: [start] 1fr 1fr [end];
-  }
-  .title {
-    justify-self: normal;
-  }
-  .rating {
-    grid-template-columns: start / end;
-  }
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
+	.title {
+		justify-self: normal;
+	}
+	.rating {
+		grid-template-columns: start / end;
+	}
 }
 
 @media screen and (max-width: 640px) {
-  .reviewForm {
-    grid-template-columns: [start] 1fr [end];
-  }
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
 }
