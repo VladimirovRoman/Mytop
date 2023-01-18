@@ -14,7 +14,8 @@
 - **React.js 18**
 - **TypeScript**
 - **Framer-Motion**
-- React Context
+- Axios (отправка запроса на бэкенд)
+- React Hooks (хуки)
 - EsLint
 - StyleLint
 - CSS-Modules 
