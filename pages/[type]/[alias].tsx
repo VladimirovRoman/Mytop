@@ -10,22 +10,27 @@ import { ProductModel } from '../../interfaces/product.interface';
 import { firstLevelMenu } from '../../helpers/helpers';
 import { TopPageComponent } from '../../page-components';
 import { API } from '../../helpers/api';
+import { Error404 } from '../404';
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+	if (!page || !products) {
+		return <Error404 />;
+	}
+
 	return (
 		<>
-			{page && products && (
-				<>
-					<Head>
-						<title>{page.metaTitle}</title>
-						<meta name='description' content={page.metaDescription} />
-						<meta property={'og:title'} content={page.metaTitle} />
-						<meta property={'og:description'} content={page.metaDescription} />
-						<meta property={'og:type'} content='article' />
-					</Head>
-					<TopPageComponent firstCategory={firstCategory} page={page} products={products} />;
-				</>
-			)}
+			(
+			<>
+				<Head>
+					<title>{page.metaTitle}</title>
+					<meta name='description' content={page.metaDescription} />
+					<meta property={'og:title'} content={page.metaTitle} />
+					<meta property={'og:description'} content={page.metaDescription} />
+					<meta property={'og:type'} content='article' />
+				</Head>
+				<TopPageComponent firstCategory={firstCategory} page={page} products={products} />;
+			</>
+			)
 		</>
 	);
 }
