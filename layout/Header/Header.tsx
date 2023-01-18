@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
 import cn from 'classnames';
@@ -11,6 +11,7 @@ import styles from './Header.module.css';
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
+	const shouldReducerMotion = useReducedMotion();
 	const router = useRouter();
 
 	useEffect(() => {
@@ -26,7 +27,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 			},
 		},
 		closed: {
-			opacity: 0,
+			opacity: shouldReducerMotion ? 1 : 0,
 			x: '100%',
 		},
 	};

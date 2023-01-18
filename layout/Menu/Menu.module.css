@@ -46,7 +46,7 @@
 .secondBlock {
 	margin-left: 12px;
 	margin-top: 15px;
-	list-style: none;
+	list-style: inside;
 
 	padding: 0 0 0 32px;
 	padding-left: 32px;
