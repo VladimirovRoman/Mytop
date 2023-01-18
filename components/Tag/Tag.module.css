@@ -37,6 +37,7 @@
 	background: var(--green-light);
 	font-weight: bold;
 }
+
 .primary {
 	color: var(--primary);
 	background: none;
