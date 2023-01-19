@@ -1,39 +1,15 @@
 import { GetStaticProps } from 'next';
-import { useState } from 'react';
 import axios from 'axios';
 
-import { Htag, Button, Paragraph, Tag, Rating, Input, Textarea } from '../components';
+import { Htag } from '../components';
 import { withLayout } from '../layout/Layout';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../helpers/api';
 
-function Home({ menu }: HomeProps): JSX.Element {
-	const [rating, setRating] = useState<number>(4);
-
+function Home(): JSX.Element {
 	return (
 		<>
-			<Htag tag='h1'> Header </Htag>
-			<Button appearance='primary' arrow='right'>
-				Кнопка
-			</Button>
-			<Button appearance='ghost' arrow='right'>
-				Кнопка
-			</Button>
-			<Paragraph size='p14'>Маленький</Paragraph>
-			<Paragraph size='p16'>Средний</Paragraph>
-			<Paragraph size='p18'>Большой</Paragraph>
-			<Tag size='s'>ghost</Tag>
-			<Tag size='m' color='red'>
-				red
-			</Tag>
-			<Tag size='s' color='green'>
-				green
-			</Tag>
-			<Tag color='primary'>lol</Tag>
-			<Rating rating={4} isEditable />
-			<Rating rating={rating} isEditable setRating={setRating} />
-			<Input placeholder='Имя' />
-			<Textarea placeholder='Текст отзыва' />
+			<Htag tag='h1'>Добро пожаловать на страницу отзывов курсов</Htag>
 		</>
 	);
 }
