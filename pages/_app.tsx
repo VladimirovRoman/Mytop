@@ -17,7 +17,7 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
 		<>
 			<Head>
 				<title>MyTop - наш лучший топ</title>
-				<link key={1} rel='icon' href='/favicon.ico' />
+				<link rel='icon' href='/favicon.ico' />
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' />
 				<link rel='preconnect' href='https://mc.yandex.ru' />
