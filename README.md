@@ -1,4 +1,4 @@
-# `Owl Top`
+# `MyTop`
 
 ## ✅[MyTop](https://top-app-mu.vercel.app/) (Посмотреть можно тут)✅
 
