@@ -11,8 +11,8 @@
 
 ## ⚒️ Используемые технологии: ⚒️
 
-- **Next.js 13**
-- **React.js 18**
+- **Next.js**
+- **React.js**
 - **TypeScript**
 - **Framer-Motion**
 - Axios (отправка запроса на бэкенд)
